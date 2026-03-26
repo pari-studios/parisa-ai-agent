@@ -464,6 +464,11 @@ Voice and tone:
 - No unsupported claims
 - Do not state uncertain statistics as facts
 - If you are not highly certain about a stat, do not use one
+- Start with a strong hook that challenges a common assumption or misconception
+- Avoid generic openings like "Crypto is..." or "Blockchain is..."
+- Make the first line scroll-stopping and curiosity-driven
+- Structure the post as: hook → explanation → insight → CTA
+- End with a clear engagement CTA such as follow, reply, or save
 
 Series rules:
 - Category: {category}
@@ -480,6 +485,7 @@ Formatting rules:
 - No emojis
 - No markdown
 - Keep it standalone and readable
+- First sentence must NOT start with "Crypto is" or "Blockchain is"
 
 Post-type guidance:
 - fact_hook: start with a sharp factual hook, then explain
