@@ -456,90 +456,68 @@ Smart beginners who want crypto explained clearly without hype.
 
 Core principle:
 Each post must explain ONLY ONE idea.
-Do not combine multiple concepts in one post.
+Do not combine multiple concepts.
 
-Voice and tone:
-- Friendly and approachable
-- Sound like a knowledgeable friend
-- Clear, precise, and human
-- Slightly opinionated, not neutral textbook tone
-- Confident but not hype
+Voice:
+- Friendly, clear, human
+- Sounds like a real person speaking, not writing
+- Slightly informal and conversational
+- Confident, not hype
+- Feels like a thought, not a lesson
 
 CRITICAL WRITING RULES:
-- One idea per post ONLY
-- Keep sentences short and tight
-- Maximum 3–4 short paragraphs
-- Avoid long explanations
+- One idea only
+- Short, tight sentences
+- Max 3–4 short paragraphs
 - Do NOT over-explain
 - Prioritise clarity over completeness
 - Every word must earn its place
-- If too long, compress instead of adding detail
-- Do not list multiple features or benefits
-- Focus on ONE insight that changes how the reader thinks
-- Write like a thought, not a lesson
-- It should feel like something someone would say out loud
-- Avoid sounding like you're "teaching" — focus on clarity, not instruction
-- Slightly conversational tone is preferred
-- Write like a real person speaking, not writing
-- Sentences should feel natural and slightly informal
-- Avoid abstract or corporate words like:
-  - transparency
-  - ecosystem
-  - revolutionary
-  - value
-- Prefer simple, concrete language
-- If a sentence sounds formal, rewrite it more casually
-- Make the post feel like a thought someone would say out loud
+- If too long, simplify instead of adding detail
 
-HOOK RULES (VERY IMPORTANT):
-- First line must interrupt a belief or assumption
-- Make the reader rethink something
-- Avoid generic hooks
+TONE RULES:
+- Avoid formal, corporate, or abstract language
+- Avoid words like: transparency, ecosystem, revolutionary, value
+- Avoid phrases like:
+  - The truth is
+  - It ensures
+  - It allows for
+  - It’s a new way
+- Write like something you would say out loud
+- If it sounds like a blog, rewrite it
+- If it sounds like AI, simplify it
+
+CLARITY RULES:
+- Avoid stacking descriptive words (e.g. "secure, transparent, efficient")
+- Use simple, direct statements instead
+- Prefer concrete phrasing over abstract wording
+- Make it easy to remember after one read
+
+HOOK RULES:
+- First line must challenge a belief or assumption
+- Must create curiosity
 - Do NOT start with definitions
 - Do NOT start with "Crypto is..." or "Blockchain is..."
 
-GOOD hook examples:
-- Most people misunderstand this about crypto.
-- This is where people get blockchain wrong.
-- Everyone talks about crypto. Few understand this part.
-- The real value of blockchain isn’t what you think.
-
-BAD hooks:
-- Crypto is...
-- Blockchain is...
-- Here’s what you need to know...
-
 STRUCTURE:
-- Hook (pattern interrupt)
+- Hook
 - Explanation (2–3 short lines)
-- Insight (1 line that simplifies the idea)
-- CTA (1 short, natural line)
+- Insight (1 clear line)
+- Optional CTA
 
 CTA RULES:
-- CTA is optional, not required
-- Only include a CTA if it feels natural
-- Do NOT force a CTA at the end of every post
-
-When using CTA, keep it minimal:
-- Follow for the next layer
-- Save this if it clicked
-- Want part 2?
-
-Otherwise:
-- End on a strong insight instead of a CTA
+- CTA is optional
+- Only include it if natural
+- Keep it short
 
 Good CTA examples:
 - Save this if it clicked.
 - Follow for the next layer.
 - Want part 2?
-- I’ll break this down further next.
 
-Avoid:
-- Learn more
-- Discover more
-- Explore more
+Otherwise:
+- End on a strong, clean insight
 
-Series rules:
+Series context:
 - Category: {category}
 - Day: {day} ({DAY_LABELS[day]})
 - Slot: {slot}
@@ -547,34 +525,23 @@ Series rules:
 - Post type: {post_type}
 - {slot_goal}
 
-Formatting rules:
-- Output must be valid JSON only
-- Tweet MUST be between {TARGET_MIN} and {TARGET_MAX} characters
-- Use 1 hashtag max
+Formatting:
+- Output JSON only
+- Length: {TARGET_MIN}–{TARGET_MAX} characters
+- Max 1 hashtag
 - No emojis
 - No markdown
 
-Post-type guidance:
-- fact_hook: sharp and perspective-shifting
-- explainer: simplify ONE concept only
-- context: explain why ONE concept matters
-- cta_engage: strong engagement CTA
-- week_summary: concise recap
+Post-type:
+- fact_hook: sharp perspective shift
+- explainer: simplify one concept
+- context: why it matters
+- cta_engage: include CTA
+- week_summary: recap simply
 - week_close: close and hint next
 - {week_close_instruction}
 
-Hard constraints:
-- Do not write like a dictionary
-- Do not explain multiple ideas
-- Do not overload the reader
-- Do not sound like AI-generated content
-- Keep it simple, sharp, and memorable
-- If the post sounds like a blog, rewrite it
-- If the post sounds like a definition, simplify it
-- If the wording feels corporate or generic, rewrite it in a more human way
-- Avoid phrases like "The truth is", "Keep that in mind", "It’s a new way"
-
-Return exactly this JSON:
+Return exactly:
 {{
   "tweet": "...",
   "char_count": 247,
