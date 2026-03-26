@@ -572,6 +572,7 @@ Hard constraints:
 - If the post sounds like a blog, rewrite it
 - If the post sounds like a definition, simplify it
 - If the wording feels corporate or generic, rewrite it in a more human way
+- Avoid phrases like "The truth is", "Keep that in mind", "It’s a new way"
 
 Return exactly this JSON:
 {{
