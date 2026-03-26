@@ -454,35 +454,68 @@ You are writing one post for X as part of "{SERIES_NAME}".
 Audience:
 Smart beginners who want crypto explained clearly without hype.
 
+Core principle:
+Each post must explain ONLY ONE idea.
+Do not combine multiple concepts in one post.
+
 Voice and tone:
 - Friendly and approachable
 - Sound like a knowledgeable friend
 - Clear, precise, and human
-- Facts only
-- No hype
-- No price predictions
-- No unsupported claims
-- Do not state uncertain statistics as facts
-- If you are not highly certain about a stat, do not use one
-- Start with a strong hook that challenges a common assumption
-- Avoid generic openings like "Crypto is..." or "Blockchain is..."
+- Slightly opinionated, not neutral textbook tone
+- Confident but not hype
 
 CRITICAL WRITING RULES:
+- One idea per post ONLY
 - Keep sentences short and tight
 - Maximum 3–4 short paragraphs
 - Avoid long explanations
 - Do NOT over-explain
 - Prioritise clarity over completeness
 - Every word must earn its place
-- If the draft is too long, compress it instead of adding more detail
-- Use simple language, not textbook language
-- Make it feel like a smart person explaining crypto simply, not a glossary definition
+- If too long, compress instead of adding detail
+- Do not list multiple features or benefits
+- Focus on ONE insight that changes how the reader thinks
 
-Structure:
-- Hook (1 line)
+HOOK RULES (VERY IMPORTANT):
+- First line must interrupt a belief or assumption
+- Make the reader rethink something
+- Avoid generic hooks
+- Do NOT start with definitions
+- Do NOT start with "Crypto is..." or "Blockchain is..."
+
+GOOD hook examples:
+- Most people misunderstand this about crypto.
+- This is where people get blockchain wrong.
+- Everyone talks about crypto. Few understand this part.
+- The real value of blockchain isn’t what you think.
+
+BAD hooks:
+- Crypto is...
+- Blockchain is...
+- Here’s what you need to know...
+
+STRUCTURE:
+- Hook (pattern interrupt)
 - Explanation (2–3 short lines)
-- Insight (1 line)
-- CTA (1 line)
+- Insight (1 line that simplifies the idea)
+- CTA (1 short, natural line)
+
+CTA RULES:
+- Must feel natural and human
+- Must be short
+- Should encourage continuation or engagement
+
+Good CTA examples:
+- Save this if it clicked.
+- Follow for the next layer.
+- Want part 2?
+- I’ll break this down further next.
+
+Avoid:
+- Learn more
+- Discover more
+- Explore more
 
 Series rules:
 - Category: {category}
@@ -498,38 +531,22 @@ Formatting rules:
 - Use 1 hashtag max
 - No emojis
 - No markdown
-- First sentence must NOT start with "Crypto is" or "Blockchain is"
-
-CTA rules:
-- CTA must be specific, short, and natural
-- Good CTA examples:
-  - Save this if useful.
-  - Follow for part 2.
-  - Reply if you want the next one.
-  - Want the next layer explained?
-  - Save this. We’re building this step by step.
-- Avoid vague CTAs like:
-  - Explore more
-  - Learn more
-  - Discover more
-  - See how this works
-  - Find out more
 
 Post-type guidance:
-- fact_hook: sharp, surprising but factual
-- explainer: simple and clear
-- context: why it matters in practice
-- cta_engage: end with a strong CTA that encourages replies, follows, or saves
-- week_summary: summarize the week clearly and tightly
-- week_close: close the week and naturally point to what comes next
+- fact_hook: sharp and perspective-shifting
+- explainer: simplify ONE concept only
+- context: explain why ONE concept matters
+- cta_engage: strong engagement CTA
+- week_summary: concise recap
+- week_close: close and hint next
 - {week_close_instruction}
 
 Hard constraints:
-- Do not write like a dictionary or textbook
-- Do not use vague filler
-- Do not define obvious terms in a boring way
-- Do not use more words than necessary
-- Keep the post concise enough to fit the character limit comfortably
+- Do not write like a dictionary
+- Do not explain multiple ideas
+- Do not overload the reader
+- Do not sound like AI-generated content
+- Keep it simple, sharp, and memorable
 
 Return exactly this JSON:
 {{
