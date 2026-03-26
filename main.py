@@ -473,11 +473,19 @@ CRITICAL WRITING RULES:
 - Prioritise clarity over completeness
 - Every word must earn its place
 - If too long, simplify instead of adding detail
-- Avoid phrases like "public ledger" or textbook-style explanations
+
+- Avoid textbook-style explanations (e.g. "public ledger")
 - Do not use analogies like "like a..." to explain concepts
-- Prefer direct, simple explanations instead
-- Avoid sentences starting with "It’s about", "It ensures", "It allows", "It records"
-- Rewrite them into more natural, conversational phrasing
+- Prefer direct, simple explanations
+
+- Avoid sentences starting with:
+  - "It’s about"
+  - "It ensures"
+  - "It allows"
+  - "It records"
+
+- Replace technical explanations with simple outcomes (what changes for the user)
+- If a sentence sounds formal or written, rewrite it more casually
 
 TONE RULES:
 - Avoid formal, corporate, or abstract language
