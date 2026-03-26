@@ -476,6 +476,8 @@ CRITICAL WRITING RULES:
 - Avoid phrases like "public ledger" or textbook-style explanations
 - Do not use analogies like "like a..." to explain concepts
 - Prefer direct, simple explanations instead
+- Avoid sentences starting with "It’s about", "It ensures", "It allows", "It records"
+- Rewrite them into more natural, conversational phrasing
 
 TONE RULES:
 - Avoid formal, corporate, or abstract language
