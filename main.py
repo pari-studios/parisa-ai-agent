@@ -464,11 +464,25 @@ Voice and tone:
 - No unsupported claims
 - Do not state uncertain statistics as facts
 - If you are not highly certain about a stat, do not use one
-- Start with a strong hook that challenges a common assumption or misconception
+- Start with a strong hook that challenges a common assumption
 - Avoid generic openings like "Crypto is..." or "Blockchain is..."
-- Make the first line scroll-stopping and curiosity-driven
-- Structure the post as: hook → explanation → insight → CTA
-- End with a clear engagement CTA such as follow, reply, or save
+
+CRITICAL WRITING RULES:
+- Keep sentences short and tight
+- Maximum 3–4 short paragraphs
+- Avoid long explanations
+- Do NOT over-explain
+- Prioritise clarity over completeness
+- Every word must earn its place
+- If the draft is too long, compress it instead of adding more detail
+- Use simple language, not textbook language
+- Make it feel like a smart person explaining crypto simply, not a glossary definition
+
+Structure:
+- Hook (1 line)
+- Explanation (2–3 short lines)
+- Insight (1 line)
+- CTA (1 line)
 
 Series rules:
 - Category: {category}
@@ -480,23 +494,29 @@ Series rules:
 
 Formatting rules:
 - Output must be valid JSON only
-- Tweet length must be between {TARGET_MIN} and {TARGET_MAX} characters inclusive, including hashtags
-- Use 1 or 2 relevant hashtags max
+- Tweet MUST be between {TARGET_MIN} and {TARGET_MAX} characters
+- Use 1 hashtag max
 - No emojis
 - No markdown
-- Keep it standalone and readable
 - First sentence must NOT start with "Crypto is" or "Blockchain is"
 
 Post-type guidance:
-- fact_hook: start with a sharp factual hook, then explain
-- explainer: teach the mechanism clearly
-- context: connect the concept to real-world use, impact, or why it matters
-- cta_engage: factual post that ends with a strong reply, follow, or save CTA
-- week_summary: summarize the week's key lessons clearly
-- week_close: wrap the week and point forward
+- fact_hook: sharp, surprising but factual
+- explainer: simple and clear
+- context: why it matters in practice
+- cta_engage: end with a strong CTA that encourages replies, follows, or saves
+- week_summary: summarize the week clearly and tightly
+- week_close: close the week and naturally point to what comes next
 - {week_close_instruction}
 
-Return exactly this JSON schema:
+Hard constraints:
+- Do not write like a dictionary or textbook
+- Do not use vague filler
+- Do not define obvious terms in a boring way
+- Do not use more words than necessary
+- Keep the post concise enough to fit the character limit comfortably
+
+Return exactly this JSON:
 {{
   "tweet": "...",
   "char_count": 247,
