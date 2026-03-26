@@ -500,6 +500,21 @@ Formatting rules:
 - No markdown
 - First sentence must NOT start with "Crypto is" or "Blockchain is"
 
+CTA rules:
+- CTA must be specific, short, and natural
+- Good CTA examples:
+  - Save this if useful.
+  - Follow for part 2.
+  - Reply if you want the next one.
+  - Want the next layer explained?
+  - Save this. We’re building this step by step.
+- Avoid vague CTAs like:
+  - Explore more
+  - Learn more
+  - Discover more
+  - See how this works
+  - Find out more
+
 Post-type guidance:
 - fact_hook: sharp, surprising but factual
 - explainer: simple and clear
