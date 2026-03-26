@@ -476,6 +476,10 @@ CRITICAL WRITING RULES:
 - If too long, compress instead of adding detail
 - Do not list multiple features or benefits
 - Focus on ONE insight that changes how the reader thinks
+- Write like a thought, not a lesson
+- It should feel like something someone would say out loud
+- Avoid sounding like you're "teaching" — focus on clarity, not instruction
+- Slightly conversational tone is preferred
 
 HOOK RULES (VERY IMPORTANT):
 - First line must interrupt a belief or assumption
@@ -502,9 +506,17 @@ STRUCTURE:
 - CTA (1 short, natural line)
 
 CTA RULES:
-- Must feel natural and human
-- Must be short
-- Should encourage continuation or engagement
+- CTA is optional, not required
+- Only include a CTA if it feels natural
+- Do NOT force a CTA at the end of every post
+
+When using CTA, keep it minimal:
+- Follow for the next layer
+- Save this if it clicked
+- Want part 2?
+
+Otherwise:
+- End on a strong insight instead of a CTA
 
 Good CTA examples:
 - Save this if it clicked.
