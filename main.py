@@ -480,6 +480,16 @@ CRITICAL WRITING RULES:
 - It should feel like something someone would say out loud
 - Avoid sounding like you're "teaching" — focus on clarity, not instruction
 - Slightly conversational tone is preferred
+- Write like a real person speaking, not writing
+- Sentences should feel natural and slightly informal
+- Avoid abstract or corporate words like:
+  - transparency
+  - ecosystem
+  - revolutionary
+  - value
+- Prefer simple, concrete language
+- If a sentence sounds formal, rewrite it more casually
+- Make the post feel like a thought someone would say out loud
 
 HOOK RULES (VERY IMPORTANT):
 - First line must interrupt a belief or assumption
@@ -559,6 +569,9 @@ Hard constraints:
 - Do not overload the reader
 - Do not sound like AI-generated content
 - Keep it simple, sharp, and memorable
+- If the post sounds like a blog, rewrite it
+- If the post sounds like a definition, simplify it
+- If the wording feels corporate or generic, rewrite it in a more human way
 
 Return exactly this JSON:
 {{
