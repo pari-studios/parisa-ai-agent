@@ -521,43 +521,7 @@ def generate_post(
         next_category=next_category,
     )
 
-    response = client.chat.completions.create(
-        model=MODEL,
-        response_format={"type": "json_object"},
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You write concise, factual, engaging X posts about crypto for beginners. "
-                    "Return valid JSON only."
-                ),
-            },
-            {"role": "user", "content": prompt},
-        ],
-    )
-
-    data = json.loads(response.choices[0].message.content)
-    tweet = data["tweet"].strip()
-    char_count = len(tweet)
-
-    def generate_post(
-    client: OpenAI,
-    slot: str,
-    category: str,
-    day: int,
-    topic: str,
-    post_type: str,
-    next_category: str | None,
-) -> Dict:
-
-    prompt = build_prompt(
-        slot=slot,
-        category=category,
-        day=day,
-        topic=topic,
-        post_type=post_type,
-        next_category=next_category,
-    )
+    last_char_count = None
 
     for attempt in range(3):
         response = client.chat.completions.create(
@@ -566,7 +530,10 @@ def generate_post(
             messages=[
                 {
                     "role": "system",
-                    "content": "You write concise, factual, engaging X posts about crypto for beginners. Return valid JSON only."
+                    "content": (
+                        "You write concise, factual, engaging X posts about crypto for beginners. "
+                        "Return valid JSON only."
+                    ),
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -575,18 +542,17 @@ def generate_post(
         data = json.loads(response.choices[0].message.content)
         tweet = data["tweet"].strip()
         char_count = len(tweet)
+        last_char_count = char_count
 
         if TARGET_MIN <= char_count <= TARGET_MAX:
             data["char_count"] = char_count
             return data
 
-        print(f"Attempt {attempt+1}: Invalid length ({char_count}), retrying...")
+        print(f"Attempt {attempt + 1}: Invalid length ({char_count}), retrying...")
 
-    # If all attempts fail
-    raise ValueError(f"Failed to generate tweet within length after retries. Last length: {char_count}")
-
-    data["char_count"] = char_count
-    return data
+    raise ValueError(
+        f"Failed to generate tweet within length after retries. Last length: {last_char_count}"
+    )
 
 
 def post_to_x(tweet: str) -> str:
