@@ -540,10 +540,50 @@ def generate_post(
     tweet = data["tweet"].strip()
     char_count = len(tweet)
 
-    if char_count < TARGET_MIN or char_count > TARGET_MAX:
-        raise ValueError(
-            f"Tweet length out of range: {char_count} chars. Expected {TARGET_MIN}-{TARGET_MAX}."
+    def generate_post(
+    client: OpenAI,
+    slot: str,
+    category: str,
+    day: int,
+    topic: str,
+    post_type: str,
+    next_category: str | None,
+) -> Dict:
+
+    prompt = build_prompt(
+        slot=slot,
+        category=category,
+        day=day,
+        topic=topic,
+        post_type=post_type,
+        next_category=next_category,
+    )
+
+    for attempt in range(3):
+        response = client.chat.completions.create(
+            model=MODEL,
+            response_format={"type": "json_object"},
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You write concise, factual, engaging X posts about crypto for beginners. Return valid JSON only."
+                },
+                {"role": "user", "content": prompt},
+            ],
         )
+
+        data = json.loads(response.choices[0].message.content)
+        tweet = data["tweet"].strip()
+        char_count = len(tweet)
+
+        if TARGET_MIN <= char_count <= TARGET_MAX:
+            data["char_count"] = char_count
+            return data
+
+        print(f"Attempt {attempt+1}: Invalid length ({char_count}), retrying...")
+
+    # If all attempts fail
+    raise ValueError(f"Failed to generate tweet within length after retries. Last length: {char_count}")
 
     data["char_count"] = char_count
     return data
