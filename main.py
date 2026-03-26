@@ -474,6 +474,7 @@ CRITICAL WRITING RULES:
 - Every word must earn its place
 - If too long, simplify instead of adding detail
 - Avoid phrases like "it changes how we think" or other abstract conclusions
+- Avoid phrases like "game-changer", "next big thing", or hype language
 
 - Avoid textbook-style explanations (e.g. "public ledger")
 - Do not use analogies like "like a..." to explain concepts
