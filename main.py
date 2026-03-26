@@ -434,4 +434,310 @@ def build_prompt(
     day: int,
     topic: str,
     post_type: str,
-    next_category: str | None
+    next_category: str | None,
+) -> str:
+    slot_goal = (
+        "Morning post teaches the mechanism: what it is, how it works, or the core concept."
+        if slot == "morning"
+        else "Evening post gives real-world context, a clear practical implication, or ends with a CTA."
+    )
+
+    week_close_instruction = ""
+    if post_type == "week_close" and next_category:
+        week_close_instruction = (
+            f"Tease the next category naturally at the end. The next category is: {next_category}."
+        )
+
+    return f"""
+You are writing one post for X as part of "{SERIES_NAME}".
+
+Audience:
+Smart beginners who want crypto explained clearly without hype.
+
+Core principle:
+Each post must explain ONLY ONE idea.
+Do not combine multiple concepts.
+
+Voice:
+- Friendly, clear, human
+- Sounds like a real person speaking, not writing
+- Slightly informal and conversational
+- Confident, not hype
+- Feels like a thought, not a lesson
+
+CRITICAL WRITING RULES:
+- One idea only
+- Short, tight sentences
+- Max 3–4 short paragraphs
+- Do NOT over-explain
+- Prioritise clarity over completeness
+- Every word must earn its place
+- If too long, simplify instead of adding detail
+- Avoid phrases like "it changes how we think" or other abstract conclusions
+- Avoid phrases like "game-changer", "next big thing", or hype language
+- Avoid textbook-style explanations (e.g. "public ledger")
+- Do not use analogies like "like a..." to explain concepts
+- Prefer direct, simple explanations
+- Avoid sentences starting with:
+  - "It’s about"
+  - "It ensures"
+  - "It allows"
+  - "It records"
+- Replace technical explanations with simple outcomes (what changes for the user)
+- If a sentence sounds formal or written, rewrite it more casually
+
+TONE RULES:
+- Avoid formal, corporate, or abstract language
+- Avoid words like: transparency, ecosystem, revolutionary, value
+- Avoid phrases like:
+  - The truth is
+  - It ensures
+  - It allows for
+  - It’s a new way
+- Write like something you would say out loud
+- If it sounds like a blog, rewrite it
+- If it sounds like AI, simplify it
+
+CLARITY RULES:
+- Avoid stacking descriptive words (e.g. "secure, transparent, efficient")
+- Use simple, direct statements instead
+- Prefer concrete phrasing over abstract wording
+- Make it easy to remember after one read
+
+HOOK RULES:
+- First line must challenge a belief or assumption
+- Must create curiosity
+- Do NOT start with definitions
+- Do NOT start with "Crypto is..." or "Blockchain is..."
+
+STRUCTURE:
+- Hook
+- Explanation (2–3 short lines)
+- Insight (1 clear line)
+- Optional CTA
+
+CTA RULES:
+- CTA is optional
+- Only include it if natural
+- Keep it short
+
+Good CTA examples:
+- Save this if it clicked.
+- Follow for the next layer.
+- Want part 2?
+
+Otherwise:
+- End on a strong, clean insight
+
+Series context:
+- Category: {category}
+- Day: {day} ({DAY_LABELS[day]})
+- Slot: {slot}
+- Topic: {topic}
+- Post type: {post_type}
+- {slot_goal}
+
+Formatting:
+- Output JSON only
+- Length: {TARGET_MIN}–{TARGET_MAX} characters
+- Max 1 hashtag
+- No emojis
+- No markdown
+
+Post-type:
+- fact_hook: sharp perspective shift
+- explainer: simplify one concept
+- context: why it matters
+- cta_engage: include CTA
+- week_summary: recap simply
+- week_close: close and hint next
+- {week_close_instruction}
+
+Return exactly:
+{{
+  "tweet": "...",
+  "char_count": 247,
+  "post_type": "{post_type}",
+  "slot": "{slot}",
+  "topic": "{topic}",
+  "category": "{category}",
+  "day": {day}
+}}
+"""
+
+
+def generate_post(
+    client: OpenAI,
+    slot: str,
+    category: str,
+    day: int,
+    topic: str,
+    post_type: str,
+    next_category: str | None,
+) -> Dict:
+    prompt = build_prompt(
+        slot=slot,
+        category=category,
+        day=day,
+        topic=topic,
+        post_type=post_type,
+        next_category=next_category,
+    )
+
+    last_char_count = None
+
+    for attempt in range(3):
+        print(
+            f"Generating post | category={category} | day={day} | slot={slot} | attempt={attempt + 1}",
+            flush=True,
+        )
+
+        response = client.chat.completions.create(
+            model=MODEL,
+            response_format={"type": "json_object"},
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You write concise, factual, engaging X posts about crypto for beginners. "
+                        "Return valid JSON only."
+                    ),
+                },
+                {"role": "user", "content": prompt},
+            ],
+        )
+
+        data = json.loads(response.choices[0].message.content)
+        tweet = data["tweet"].strip()
+        char_count = len(tweet)
+        last_char_count = char_count
+
+        if TARGET_MIN <= char_count <= TARGET_MAX:
+            data["char_count"] = char_count
+            return data
+
+        print(f"Attempt {attempt + 1}: Invalid length ({char_count}), retrying...", flush=True)
+
+    raise ValueError(
+        f"Failed to generate tweet within length after retries. Last length: {last_char_count}"
+    )
+
+
+def post_to_x(tweet: str) -> str:
+    client = get_twitter_client()
+    response = client.create_tweet(text=tweet)
+    return str(response.data["id"])
+
+
+def save_post_record(
+    conn: sqlite3.Connection,
+    payload: Dict,
+    twitter_post_id: str | None,
+) -> None:
+    conn.execute("""
+        INSERT OR REPLACE INTO posts (
+            category, day, slot, topic, post_type, tweet, char_count, twitter_post_id
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        payload["category"],
+        payload["day"],
+        payload["slot"],
+        payload["topic"],
+        payload["post_type"],
+        payload["tweet"],
+        payload["char_count"],
+        twitter_post_id,
+    ))
+    conn.commit()
+
+
+def advance_progress(progress: Progress) -> Progress:
+    next_day = progress.day + 1
+    next_category_index = progress.category_index
+
+    if next_day > 7:
+        next_day = 1
+        next_category_index = (progress.category_index + 1) % len(CATEGORY_ORDER)
+
+    return Progress(category_index=next_category_index, day=next_day)
+
+
+def main() -> None:
+    print("STEP 1: main started", flush=True)
+
+    slot = get_slot()
+    print(f"STEP 2: slot = {slot}", flush=True)
+
+    db_path = get_db_path()
+    print(f"STEP 3: db_path = {db_path}", flush=True)
+
+    conn = sqlite3.connect(db_path)
+    init_db(conn)
+    print("STEP 4: database initialized", flush=True)
+
+    progress = load_progress(conn)
+    print(
+        f"STEP 5: progress loaded | category_index={progress.category_index}, day={progress.day}",
+        flush=True,
+    )
+
+    category, day, topic, post_type = get_current_category_and_topic(progress, slot)
+    next_category = CATEGORY_ORDER[(progress.category_index + 1) % len(CATEGORY_ORDER)]
+
+    print(
+        f"STEP 6: category={category}, day={day}, slot={slot}, post_type={post_type}",
+        flush=True,
+    )
+    print(f"STEP 7: topic={topic}", flush=True)
+
+    existing = maybe_get_existing_post(conn, category, day, slot)
+    if existing:
+        print("STEP 8: existing post found, returning cached result", flush=True)
+        print(json.dumps(existing, ensure_ascii=False), flush=True)
+        conn.close()
+        return
+
+    print("STEP 8: no existing post found, generating new one", flush=True)
+
+    openai_client = get_openai_client()
+    print("STEP 9: OpenAI client created", flush=True)
+
+    payload = generate_post(
+        client=openai_client,
+        slot=slot,
+        category=category,
+        day=day,
+        topic=topic,
+        post_type=post_type,
+        next_category=next_category,
+    )
+    print("STEP 10: post generated successfully", flush=True)
+    print(json.dumps(payload, ensure_ascii=False), flush=True)
+
+    should_post = os.getenv("POST_TO_X", "false").lower() == "true"
+    twitter_post_id = None
+
+    if should_post:
+        print("STEP 11: posting to X", flush=True)
+        twitter_post_id = post_to_x(payload["tweet"])
+        print(f"STEP 12: posted to X | tweet_id={twitter_post_id}", flush=True)
+    else:
+        print("STEP 11: POST_TO_X is false, skipping X post", flush=True)
+
+    save_post_record(conn, payload, twitter_post_id)
+    print("STEP 13: post saved to database", flush=True)
+
+    if slot == "evening":
+        progress = advance_progress(progress)
+        save_progress(conn, progress)
+        print(
+            f"STEP 14: progress advanced | new_category_index={progress.category_index}, new_day={progress.day}",
+            flush=True,
+        )
+
+    conn.close()
+    print("STEP 15: done", flush=True)
+
+
+if __name__ == "__main__":
+    main()
