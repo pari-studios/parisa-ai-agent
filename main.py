@@ -473,6 +473,9 @@ CRITICAL WRITING RULES:
 - Prioritise clarity over completeness
 - Every word must earn its place
 - If too long, simplify instead of adding detail
+- Avoid phrases like "public ledger" or textbook-style explanations
+- Do not use analogies like "like a..." to explain concepts
+- Prefer direct, simple explanations instead
 
 TONE RULES:
 - Avoid formal, corporate, or abstract language
