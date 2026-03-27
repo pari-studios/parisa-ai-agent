@@ -500,6 +500,12 @@ STYLE RULES:
 - Do not stretch analogies too far
 - Do not explain internal mechanics unless needed
 - Do not repeat the same idea in different words
+- Avoid speculative phrases like:
+  - "this could"
+  - "this might"
+  - "this has the potential to"
+- Evening posts must describe a real, concrete outcome
+- Focus on what actually changes in practice
 
 HOOK RULES:
 - First line must challenge a belief or assumption
