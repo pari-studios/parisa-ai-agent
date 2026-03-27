@@ -495,6 +495,7 @@ CRITICAL WRITING RULES:
 - Natural phrases are allowed (e.g. "you might think")
 - Avoid long combined sentences
 - Prefer 1 idea per line instead of 1 idea per sentence
+- Focus only on what the user needs to understand the idea
 
 THOUGHT MODE (MANDATORY):
 - Write like you're thinking out loud
