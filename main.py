@@ -484,7 +484,7 @@ CRITICAL WRITING RULES:
 - If too long, simplify instead of adding detail
 - Avoid textbook explanations
 - Do not define things like a dictionary
-- Do not use analogies like "like a..."
+- Analogies are allowed, but must be simple, natural, and not overused
 - Avoid phrases like:
   - "it allows"
   - "it ensures"
