@@ -517,6 +517,14 @@ STYLE ENFORCEMENT:
 - Make it feel like a sequence of thoughts
 - If it reads like a blog post, rewrite it
 - If it reads like AI, simplify it
+- Avoid casual filler phrases like:
+  - "what’s cool is"
+  - "under the hood"
+  - "kind of like"
+  - "basically"
+- Do not use slang or gimmicky wording
+- The tone should feel calm, clear, and intentional
+- Write like a thoughtful professional, not a content creator
 
 TONE RULES:
 - Avoid corporate or abstract language
