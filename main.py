@@ -458,67 +458,70 @@ Core principle:
 Each post must explain ONLY ONE idea.
 Do not combine multiple concepts.
 
-Voice:
+VOICE:
 - Friendly, clear, human
-- Sounds like a real person speaking, not writing
+- Sounds like a real person speaking
 - Slightly informal and conversational
-- Confident, not hype
 - Feels like a thought, not a lesson
+- Confident but not hype
 
 CRITICAL WRITING RULES:
 - One idea only
 - Short, tight sentences
 - Max 3–4 short paragraphs
 - Do NOT over-explain
-- Prioritise clarity over completeness
 - Every word must earn its place
 - If too long, simplify instead of adding detail
-- Avoid phrases like "it changes how we think" or other abstract conclusions
-- Avoid phrases like "game-changer", "next big thing", or hype language
-- Avoid textbook-style explanations (e.g. "public ledger")
-- Do not use analogies like "like a..." to explain concepts
-- Prefer direct, simple explanations
-- Avoid sentences starting with:
-  - "It’s about"
-  - "It ensures"
-  - "It allows"
-  - "It records"
-- Replace technical explanations with simple outcomes (what changes for the user)
-- If a sentence sounds formal or written, rewrite it more casually
+- Avoid textbook explanations
+- Do not define things like a dictionary
+- Do not use analogies like "like a..."
+- Avoid phrases like:
+  - "it allows"
+  - "it ensures"
+  - "it means"
+  - "the truth is"
+- Avoid generic marketing language
+- If it sounds like content, rewrite it
+
+THOUGHT MODE (MANDATORY):
+- Write like you're thinking out loud
+- Not teaching, not explaining formally
+- Break ideas across lines naturally
+- Each line should feel spoken
+- Slightly imperfect sentence flow is OK
+- Avoid fully polished paragraphs
+- Prefer rhythm over correctness
+
+STYLE ENFORCEMENT:
+- Use short line breaks (not long paragraphs)
+- Each line should carry one idea
+- Avoid stacking ideas in one sentence
+- Make it feel like a sequence of thoughts
+- If it reads like a blog post, rewrite it
+- If it reads like AI, simplify it
 
 TONE RULES:
-- Avoid formal, corporate, or abstract language
+- Avoid corporate or abstract language
 - Avoid words like: transparency, ecosystem, revolutionary, value
-- Avoid phrases like:
-  - The truth is
-  - It ensures
-  - It allows for
-  - It’s a new way
-- Write like something you would say out loud
-- If it sounds like a blog, rewrite it
-- If it sounds like AI, simplify it
-
-CLARITY RULES:
-- Avoid stacking descriptive words (e.g. "secure, transparent, efficient")
-- Use simple, direct statements instead
-- Prefer concrete phrasing over abstract wording
-- Make it easy to remember after one read
+- Keep language simple and direct
+- Make it feel natural, not written
 
 HOOK RULES:
-- First line must challenge a belief or assumption
-- Must create curiosity
+- First line must challenge a belief
+- Must create curiosity immediately
 - Do NOT start with definitions
 - Do NOT start with "Crypto is..." or "Blockchain is..."
 
 STRUCTURE:
 - Hook
-- Explanation (2–3 short lines)
-- Insight (1 clear line)
+- Reframe
+- Simple explanation
+- Clean insight
 - Optional CTA
 
 CTA RULES:
 - CTA is optional
-- Only include it if natural
+- Only include if natural
 - Keep it short
 
 Good CTA examples:
@@ -527,7 +530,7 @@ Good CTA examples:
 - Want part 2?
 
 Otherwise:
-- End on a strong, clean insight
+- End on a strong insight
 
 Series context:
 - Category: {category}
@@ -544,14 +547,37 @@ Formatting:
 - No emojis
 - No markdown
 
-Post-type:
-- fact_hook: sharp perspective shift
-- explainer: simplify one concept
+Post-type guidance:
+- fact_hook: perspective shift
+- explainer: simplify one idea only
 - context: why it matters
 - cta_engage: include CTA
-- week_summary: recap simply
-- week_close: close and hint next
+- week_summary: simple recap
+- week_close: close + hint next
 - {week_close_instruction}
+
+HARD REJECTION RULES (MANDATORY):
+If the output contains ANY of the following, rewrite it:
+
+- Sounds like a definition or textbook explanation
+- Starts with "Crypto is..." or "Blockchain is..."
+- Feels like a blog post or article
+- Contains multiple ideas in one post
+- Uses filler phrases like:
+  - "it's more than"
+  - "it allows"
+  - "it ensures"
+  - "it helps"
+- Sounds like marketing or promotional content
+- Feels overly polished or corporate
+- Does not sound like something a real person would say out loud
+
+FINAL CHECK BEFORE OUTPUT:
+- Would a real person say this naturally?
+- Does it feel like a thought, not content?
+- Is there only ONE clear idea?
+
+If not, rewrite before returning.
 
 Return exactly:
 {{
