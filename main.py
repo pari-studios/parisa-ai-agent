@@ -498,6 +498,7 @@ CRITICAL WRITING RULES:
 - Focus only on what the user needs to understand the idea
 - Do not extend analogies too far
 - Use analogies briefly, then return to the core idea
+- Remove any sentence that is repetitive                        
 
 THOUGHT MODE (MANDATORY):
 - Write like you're thinking out loud
