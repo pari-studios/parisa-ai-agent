@@ -492,6 +492,9 @@ CRITICAL WRITING RULES:
   - "the truth is"
 - Avoid generic marketing language
 - If it sounds like content, rewrite it
+- Natural phrases are allowed (e.g. "you might think")
+- Avoid long combined sentences
+- Prefer 1 idea per line instead of 1 idea per sentence
 
 THOUGHT MODE (MANDATORY):
 - Write like you're thinking out loud
