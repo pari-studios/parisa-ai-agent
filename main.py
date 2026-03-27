@@ -748,8 +748,9 @@ def main() -> None:
     if existing:
         print("STEP 8: existing post found, returning cached result", flush=True)
         print("FULL TWEET OUTPUT:", flush=True)
-print(payload["tweet"], flush=True)
-print(json.dumps(payload, ensure_ascii=False), flush=True)
+        print(existing["tweet"], flush=True)
+        print(json.dumps(existing, ensure_ascii=False), flush=True)
+        conn.close()
         return
 
     print("STEP 8: no existing post found, generating new one", flush=True)
