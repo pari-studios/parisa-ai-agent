@@ -464,6 +464,16 @@ VOICE:
 - Slightly informal and conversational
 - Feels like a thought, not a lesson
 - Confident but not hype
+- Do NOT use phrases that sound generic or overused on crypto Twitter
+- Avoid words like:
+  - fad
+  - revolution
+  - paradigm shift
+  - next big thing
+- Avoid dramatic or exaggerated language
+- Keep tone grounded, simple, and real
+- Write like someone explaining something casually to a friend
+- If a word feels unnatural or something you wouldn’t personally say, replace it
 
 CRITICAL WRITING RULES:
 - One idea only
