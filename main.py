@@ -516,21 +516,31 @@ STRUCTURE:
 - Hook
 - Reframe
 - Simple explanation
-- Clean insight
-- Optional CTA
+- Final insight (CTA optional, not required)
 
-CTA RULES:
-- CTA is optional
-- Only include if natural
-- Keep it short
+ENDING RULES:
+- Do NOT use generic CTAs
+- Do NOT ask for follows directly
+- CTA is optional, and should be rare
+- Only include a CTA if it feels like a natural extension of the thought
+- The post should still feel complete without it
 
-Good CTA examples:
+GOOD endings:
+- That’s the shift.
+- That’s where it changes.
+- Most people miss this part.
+- This is what actually matters.
+
+OPTIONAL engagement (use sparingly):
 - Save this if it clicked.
-- Follow for the next layer.
-- Want part 2?
+- This one’s worth remembering.
 
-Otherwise:
-- End on a strong insight
+BAD endings (never use):
+- Follow for more
+- Stay tuned
+- Want to learn more?
+- Curious to know more?
+- Discover more
 
 Series context:
 - Category: {category}
