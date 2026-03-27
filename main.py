@@ -462,113 +462,69 @@ VOICE:
 - Friendly, clear, human
 - Sounds like a real person speaking
 - Slightly informal and conversational
+- Calm, grounded, and thoughtful
 - Feels like a thought, not a lesson
 - Confident but not hype
-- Do NOT use phrases that sound generic or overused on crypto Twitter
-- Avoid words like:
-  - fad
-  - revolution
-  - paradigm shift
-  - next big thing
-- Avoid dramatic or exaggerated language
-- Keep tone grounded, simple, and real
-- Write like someone explaining something casually to a friend
-- If a word feels unnatural or something you wouldn’t personally say, replace it
 
-CRITICAL WRITING RULES:
+WRITING RULES:
 - One idea only
 - Short, tight sentences
 - Max 3–4 short paragraphs
-- Do NOT over-explain
 - Every word must earn its place
 - If too long, simplify instead of adding detail
+- Prefer simple, familiar language over technical language
+- Explain clearly, but do not over-explain
+- Focus on what the reader needs to understand the point
+- Natural phrases are allowed if they sound real
+- Break longer thoughts into short lines
+- Prefer one idea per line
+
+STYLE RULES:
 - Avoid textbook explanations
-- Do not define things like a dictionary
-- Analogies are allowed, but must be simple, natural, and not overused
-- Avoid phrases like:
-  - "it allows"
-  - "it ensures"
-  - "it means"
-  - "the truth is"
+- Avoid dictionary-style definitions
 - Avoid generic marketing language
-- If it sounds like content, rewrite it
-- Natural phrases are allowed (e.g. "you might think")
-- Avoid long combined sentences
-- Prefer 1 idea per line instead of 1 idea per sentence
-- Focus only on what the user needs to understand the idea
-- Do not extend analogies too far
-- Use analogies briefly, then return to the core idea
-- Remove any sentence that is repetitive        
-- Never add a sentence that repeats the same idea in different words                            
-
-THOUGHT MODE (MANDATORY):
-- Write like you're thinking out loud
-- Not teaching, not explaining formally
-- Break ideas across lines naturally
-- Each line should feel spoken
-- Slightly imperfect sentence flow is OK
-- Avoid fully polished paragraphs
-- Prefer rhythm over correctness
-
-STYLE ENFORCEMENT:
-- Use short line breaks (not long paragraphs)
-- Each line should carry one idea
-- Avoid stacking ideas in one sentence
-- Make it feel like a sequence of thoughts
-- If it reads like a blog post, rewrite it
-- If it reads like AI, simplify it
+- Avoid corporate or abstract words like:
+  - transparency
+  - ecosystem
+  - revolutionary
+  - value
 - Avoid casual filler phrases like:
-  - "what’s cool is"
-  - "under the hood"
-  - "kind of like"
-  - "basically"
-- Do not use slang or gimmicky wording
-- The tone should feel calm, clear, and intentional
-- Write like a thoughtful professional, not a content creator
-
-TONE RULES:
-- Avoid corporate or abstract language
-- Avoid words like: transparency, ecosystem, revolutionary, value
-- Keep language simple and direct
-- Make it feel natural, not written
+  - under the hood
+  - what’s cool is
+  - basically
+- Avoid overused crypto-Twitter words like:
+  - fad
+  - paradigm shift
+  - next big thing
+- Analogies are allowed, but must be simple, natural, and brief
+- Do not stretch analogies too far
+- Do not explain internal mechanics unless needed
+- Do not repeat the same idea in different words
 
 HOOK RULES:
-- First line must challenge a belief
-- Must create curiosity immediately
-- Do NOT start with definitions
-- Do NOT start with "Crypto is..." or "Blockchain is..."
-
-STRUCTURE:
-- Hook
-- Reframe
-- Simple explanation
-- Final insight (CTA optional, not required)
+- First line must challenge a belief or assumption
+- It should create curiosity immediately
+- Do NOT start with:
+  - "Crypto is..."
+  - "Blockchain is..."
+- Hooks can be direct and natural, for example:
+  - "Think crypto is just digital money?"
+  - "You might think crypto is just money."
 
 ENDING RULES:
-- Do NOT use generic CTAs
-- Do NOT ask for follows directly
-- CTA is optional, and should be rare
-- Only include a CTA if it feels like a natural extension of the thought
-- The post should still feel complete without it
+- End on a clean, strong insight
+- CTA is optional and should be rare
+- Do not end with generic prompts like:
+  - Follow for more
+  - Stay tuned
+  - Curious to know more?
+  - Want to learn more?
+- Avoid endings like:
+  - Most people miss this part.
+  - That’s the core of how it works.
+  - That’s what it really does.
 
-GOOD endings:
-- That’s the shift.
-- That’s where it changes.
-- Most people miss this part.
-- This is what actually matters.
-
-OPTIONAL engagement (use sparingly):
-- Save this if it clicked.
-- This one’s worth remembering.
-
-BAD endings (never use):
-- Follow for more
-- Stay tuned
-- Want to learn more?
-- Curious to know more?
-- Discover more
-
-Series context:
+SERIES CONTEXT:
 - Category: {category}
 - Day: {day} ({DAY_LABELS[day]})
 - Slot: {slot}
@@ -576,44 +532,41 @@ Series context:
 - Post type: {post_type}
 - {slot_goal}
 
-Formatting:
+FORMAT:
 - Output JSON only
 - Length: {TARGET_MIN}–{TARGET_MAX} characters
 - Max 1 hashtag
 - No emojis
 - No markdown
 
-Post-type guidance:
-- fact_hook: perspective shift
-- explainer: simplify one idea only
-- context: why it matters
-- cta_engage: include CTA
-- week_summary: simple recap
-- week_close: close + hint next
+POST-TYPE GUIDANCE:
+- fact_hook: challenge a belief, then clarify it
+- explainer: explain one concept simply
+- context: explain why that one idea matters
+- cta_engage: only use a CTA if it feels natural
+- week_summary: recap simply
+- week_close: close clearly and hint at what comes next
 - {week_close_instruction}
 
-HARD REJECTION RULES (MANDATORY):
-If the output contains ANY of the following, rewrite it:
+HARD REJECTION RULES:
+If the output does any of the following, rewrite it before returning:
+- sounds like a blog post
+- sounds like a textbook
+- sounds like marketing copy
+- sounds overly polished or AI-generated
+- explains more than one idea
+- uses filler like:
+  - it allows
+  - it ensures
+  - it helps
+  - it's more than
+- uses phrases you would not naturally say out loud
 
-- Sounds like a definition or textbook explanation
-- Starts with "Crypto is..." or "Blockchain is..."
-- Feels like a blog post or article
-- Contains multiple ideas in one post
-- Uses filler phrases like:
-  - "it's more than"
-  - "it allows"
-  - "it ensures"
-  - "it helps"
-- Sounds like marketing or promotional content
-- Feels overly polished or corporate
-- Does not sound like something a real person would say out loud
-
-FINAL CHECK BEFORE OUTPUT:
+FINAL CHECK:
 - Would a real person say this naturally?
-- Does it feel like a thought, not content?
-- Is there only ONE clear idea?
-
-If not, rewrite before returning.
+- Is it one clear idea?
+- Is it simple without sounding childish?
+- Does it sound like a person, not content?
 
 Return exactly:
 {{
