@@ -496,6 +496,8 @@ CRITICAL WRITING RULES:
 - Avoid long combined sentences
 - Prefer 1 idea per line instead of 1 idea per sentence
 - Focus only on what the user needs to understand the idea
+- Do not extend analogies too far
+- Use analogies briefly, then return to the core idea
 
 THOUGHT MODE (MANDATORY):
 - Write like you're thinking out loud
